@@ -1,0 +1,13 @@
+MANIFEST
+README.md
+LICENSE
+Todo
+Changes
+Makefile.PL
+lib/Math/Interval.pm
+lib/Math/Interval/Const.pm
+lib/Math/Interval/Regexp.pm
+lib/Math/Interval/Util.pm
+lib/Math/Interval/Ops.pm
+lib/Math/Interval/Store/Std.pm
+t/001_load.t
