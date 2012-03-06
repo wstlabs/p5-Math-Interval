@@ -6,13 +6,16 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME         => 'Math-Interval',
     VERSION_FROM => 'lib/Math/Interval.pm', # finds \$VERSION
-    AUTHOR       => 'null@nobody.org',
+    AUTHOR       => 'WST ( null@nobody.org )',
     ABSTRACT     => 'Module abstract (<= 44 characters) goes here',
     PREREQ_PM    => {
-        'Assert::Types' => 0,
+        'Assert::Std' => 0.001,
         'Test::Simple'  => 0.44,
-        'Test::More'    => 0,
-        'Log::Inline'   => 0,
+        'Test::More'    => 0.31,
+        'Log::EZ'   => 0.001,
+        'Readonly'  => '1.03',
+        'Scalar::Util' => 1.23,
+        'Exporter::Tidy' => 0.07,
     }
 );
 

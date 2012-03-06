@@ -1,13 +1,11 @@
-#
-#
 package Math::Interval;
 use strict;
 use warnings;
-use Assert::Types          qw( :all );
+use Assert::Std            qw( :types );
 use Scalar::Util           qw( reftype );
 use Carp                   qw( confess );
 use Readonly;
-use Log::Inline;
+use Log::EZ;
 use Math::Interval::Regexp qw( :all );
 use Math::Interval::Const  qw( :all );
 use Math::Interval::Util   qw( :all );
@@ -17,7 +15,7 @@ use Math::Interval::Ops    qw( :all );
 # see notes in the constructor, below.
 use Math::Interval::Store::Std;
 
-our $VERSION = '0.03c';
+our $VERSION = '0.003';
 
 use base 'Exporter';
 our @EXPORT_OK = @Math::Interval::Const::EXPORT_OK;
