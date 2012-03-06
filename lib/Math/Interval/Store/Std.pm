@@ -1,12 +1,12 @@
 package Math::Interval::Store::Std;
 use strict;
 use warnings;
-use Assert::Types              qw( :all );
+use Assert::Std                qw( :types );
 use Assert::Numeric            qw( is_nan );
 use Scalar::Util               qw( refaddr );
 use Carp                       qw( confess );
-use Log::Inline;
-use base 'Math::Interval';
+use parent 'Math::Interval';
+# use Log::EZ;
 
 {
     my (%X,%Y,%Z,%Q);

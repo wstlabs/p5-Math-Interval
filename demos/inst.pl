@@ -1,9 +1,8 @@
 use strict;
 use warnings;
 use Math::Interval;
-use Assert::Types; 
-use Trace;
-use YAML;
+use Assert::Std qw(:types); 
+use Log::EZ;
 
 GetVerbose;
 

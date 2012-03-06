@@ -1,12 +1,12 @@
 package Math::Interval::Util;
 use strict;
 use warnings;
-use Assert::Types          qw( :all );
+use Assert::Std            qw( :types );
 use Scalar::Util           qw( reftype blessed );
 use Carp                   qw( confess );
-use Log::Inline;
 use Readonly;
 use Math::Interval::Const  qw( :all );
+# use Log::EZ;
 
 use base 'Exporter';
 our @EXPORT_OK = qw/

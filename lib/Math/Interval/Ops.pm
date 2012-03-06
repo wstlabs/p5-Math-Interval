@@ -4,7 +4,7 @@ use warnings;
 use Readonly;
 use Carp qw( confess );
 use base 'Exporter'; 
-use Assert::Types qw( :all );
+use Assert::Std qw( :types );
 use Math::Interval::Regexp qw( :all );
 use Log::Inline;
 
