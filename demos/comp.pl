@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 use Math::Interval qw( :const );
-use Log::Inline;
+use Log::EZ;
 
 our $DEBUG = 1;
 GetVerbose;

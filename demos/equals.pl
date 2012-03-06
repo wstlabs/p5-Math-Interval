@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use Math::Interval;
 use Math::Interval::Util qw( :all );
-use Log::Inline;
+use Log::EZ;
 use Carp;
 
 

@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 use Math::Interval;
-use Log::Inline;
+use Log::EZ;
 use Carp;
 
 our $DEBUG = 1;

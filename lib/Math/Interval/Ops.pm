@@ -6,7 +6,7 @@ use Carp qw( confess );
 use base 'Exporter'; 
 use Assert::Std qw( :types );
 use Math::Interval::Regexp qw( :all );
-use Log::Inline;
+use Log::EZ;
 
 our @EXPORT_OK = qw/
         jfa_infl

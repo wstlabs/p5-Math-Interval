@@ -3,7 +3,7 @@ use warnings;
 use Math::Interval;
 use Math::Interval::Util qw( :all );
 use Math::Interval::Regexp qw( :all );
-use Log::Inline;
+use Log::EZ;
 use Carp;
 
 
