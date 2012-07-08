@@ -14,9 +14,16 @@ Math::Interval - A container class for ordinal intervals
 
 # DESCRIPTION 
 
-A class representing the usual mathematical notion of an interval over any (topologically complete) ordered field, providing as complete a set of basic set-theoretic operations as are practical and useful.  
+A class representing the usual mathematical notion of an _ordinal interval_.  Since this is Perl, we allow our endpoints to be any object which can be "numerically" ordered, i.e. which answer to the relations
+```
+   < <= => >
+```
 
-Currently this module is a work in progress; about 60% complete in terms of elementary methods and implementations. 
+So not only floats and ints, but also DateTime-like objects, (well-defined) version numbers, etc.  
+
+The class also aims to be provide basic "topologically awareness" to whatever extent possible, so it has notions of "close", "open", "half-open" built-in.
+
+Currently this module is a work in progress; about 60% complete in terms of elementary methods and implementations (see _CAVEATS_, below).
 
 # MOTIVATIONS
 
@@ -97,11 +104,9 @@ and in fact it is often desirable to do so (in cases where the underlying basety
 
 In such cases, the intervals, while topologically equivalent, will have different storage representations (and will serialize differently, also).  But it all works out at the end; main thing is that interval objects DWYM, robustly, in both senses.
 
-# STATUS
+# CAVEATS 
 
-Work was begun in a few weekends in Januray and 2010, and put on pause.  One thing I noticed was that in order to rigorously test the Allen relations (and their extensions for non-closed intervals), we'll need about some 4000+ combinatorial cases to exercise all meaningful interval pairings.  Not to difficult to generate (and in fact there are some nice combinatorial loops for this, but still, it needed to be done).  
-
-And since this actually looks like a good application of TDD, I resolved to generate the remaining cases before implementing the last 7 or 8 Allen relations (na the 6 or so extenions) remaining.
+Work was begun in a few weekends in Januray and 2010, and put on pause.  One thing I noticed was that in order to rigorously test the Allen relations (and their extensions for non-closed intervals), we'll need about some 4000+ combinatorial cases to exercise all meaningful interval pairings.  Not to difficult to generate (and in fact there are some nice combinatorial loops for this, but still, it needed to be done).  I resolved to generate the remaining cases before implementing the last 7 or 8 Allen relations (na the 6 or so extenions) remaining.
 
 Nonetheless, a goodly number of test cases have been implemented by hand; these are available under the usual t/ directory.
 

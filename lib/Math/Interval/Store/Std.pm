@@ -278,7 +278,7 @@ use parent 'Math::Interval';
 }
 
 sub new {
-	my ($class,$spec) = @_;
+    my ($class,$spec) = @_;
     assert_hash_ref($spec);
     my $ival = bless \do { my $foo = 1 }, $class;
     my ($x,$y,$z,$q) = @{$spec}{qw/ x y z q /};
