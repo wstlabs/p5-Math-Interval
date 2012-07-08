@@ -1,20 +1,27 @@
-Math::Interval
---------------
+# NAME 
+
+Math::Interval - A container class for ordinal intervals
+
+# SYNOPSIS
+
+```
+   $I = Math::Interval->new("(2,4)");
+   $J = Math::Interval->new("[3,+inf)");
+   $K = $I->union($J);      # (2,+inf) 
+   $L = $I->intersect($J);  # [3,4)
+```
+
+
+# DESCRIPTION 
 
 A class representing the usual mathematical notion of an interval over any (topologically complete) ordered field, providing as complete a set of basic set-theoretic operations as are practical and useful.  
 
-Currently this module is a work in progress; about 60% complete.  
+Currently this module is a work in progress; about 60% complete in terms of elementary methods and implementations. 
 
-Features
-========
+# MOTIVATIONS
 
-By "interval" we man the usual notion from your first year calculus class with all the sweet, wholesome that comes to mind:  open, closed, and half-open intevals, intervals including points at infinity (or not), degenerate intervals, etc:
+By "interval" we man the usual notion from your first year calculus class with all the sweet, wholesome that comes to mind:  open, closed, and half-open intevals, intervals including points at infinity (or not), degenerate intervals.
   
-     $I = Math::Interval->new("(2,4)");
-     $J = Math::Interval->new("[3,+inf)");
-     $K = $I->union($J);      # (2,+inf) 
-     $L = $I->intersect($J);  # [3,4)
-
 All the usual set-theoretic operations apply:  we can create unions or intersections of intervals; we can derive the closure, or the interior of an interval. 
 
 Math::Interval objects can also be created from alternive numeric constructs (such as bigints, bigrats, and bigfloats) as well as from non-numeric objects (like DateTime or Benchmark objects); and can be constructed from non-homogenous pairings of such objects as well.  Only constraints are:  (1) undefined endpoints are not allowed, as are NaN-equivalent values; and (2) whatever the initial basetype, it needs to support the basic comparator operations ( <, >, <=>, ==, != ) that apply to regular perl scalars.   
@@ -90,8 +97,7 @@ and in fact it is often desirable to do so (in cases where the underlying basety
 
 In such cases, the intervals, while topologically equivalent, will have different storage representations (and will serialize differently, also).  But it all works out at the end; main thing is that interval objects DWYM, robustly, in both senses.
 
-Status
-======
+# STATUS
 
 Work was begun in a few weekends in Januray and 2010, and put on pause.  One thing I noticed was that in order to rigorously test the Allen relations (and their extensions for non-closed intervals), we'll need about some 4000+ combinatorial cases to exercise all meaningful interval pairings.  Not to difficult to generate (and in fact there are some nice combinatorial loops for this, but still, it needed to be done).  
 
@@ -99,16 +105,15 @@ And since this actually looks like a good application of TDD, I resolved to gene
 
 Nonetheless, a goodly number of test cases have been implemented by hand; these are available under the usual t/ directory.
 
-Todo
-====
+# TODO
 
+* figure out the storage class
 * combinatoiral cases
 * polymorphics cases
 * autoboxing, i.e. "[2,5)"->intersect("(3,7]")
 * attribute notation for constructors 
 
-Links
-=====
+# LINKS
 
-* <http://en.wikipedia.org/wiki/Interval_(mathematics)>
-* <http://en.wikipedia.org/wiki/Allen's_Interval_Algebra>
+* http://en.wikipedia.org/wiki/Interval_(mathematics)
+* https://en.wikipedia.org/wiki/Allen%27s_Interval_Algebra 
